@@ -1,0 +1,111 @@
+QtWidgets   包含了一整套ui元素控件，用于建立符合系统风格的界面
+
+            按钮控件   QPushButton按钮   QCommandLinkButton按钮  QRadioButton单选  QCheckButton多选
+
+            输入控件   纯键盘输入：  QLineEdit单行    QTextEdit多行    QPlainTextEdit普通多行   QKeySequenceEdit采集输入
+                     步长调节（QAbstractSpinBox 鼠标加键盘）： QDateTimeEdit采集时间输入：   QDateEdit   QTimeEdit
+                                                           QSpinBox整形输入
+                                                           QDoubleSpinBox浮点型输入
+                     组合框（下拉选择输入）：  QComboBox下拉菜单输入     QFontComboBox字体下拉菜单输入
+                     滑块（QAbstractSlider鼠标）：  QDial旋钮     QSlider滑块   QScrollbar下拉滚动条
+                     框选：    QRubberBand
+                     对话框：   QColorDialog选颜色    QFileDialog选文件    QFontDialog选字体    QInputDialog简单输入
+                     日期：     QCalendarWidget日历对话框
+
+            展示控件   QLabel：    可以展示文本、数字、富文本（超链接）、图片、QLabel动画
+                      QLCDNumber lcd灯
+                      QProgressBar进度条
+                      QDialog对话框：  QMessageBox警告提示或者点击确认弹框   QErrorMessage错误弹框   QProgressDialog进度弹框
+
+            容器控件   QToolBox装按钮的框   QDialogButtonBox对话框列   QGroupBox对话框组合   QMdiSubWindow放置小窗口的框
+
+            结构控件   QMainWindow   包含菜单栏工具栏状态栏等的组合窗口
+                      QTabWidget    标签切换窗口  包含有QTabBar多标签切换按钮
+                      QStackedWidget  多界面切换
+                      QSplitter     分割窗口
+                      QDockWidget   可悬浮可停靠的窗口
+
+            滚动控件   QTextBrowser文本浏览器
+                      QScrollArea可滑动区域
+                      QAbstractItemView     QColumnView 列选择
+                                            QHeaderView 头部视图
+                                            QListView ：   QListWidget展示列表元素      QUndoView 可撤销可重做
+                                            QTableView：   QTableWidget  表格
+                                            QTreeView ：   QTreeWidget   树形大纲结构
+                      QMdiArea 一个框里有好多小对话框
+                      QGraphicsView   画图框
+
+
+            辅助控件   QFocusFrame  焦点宽，选中会高亮显示     QSizeGrip可拖拉缩放窗口    QDesktopWidget可访问桌面信息
+
+            其他空间   QDialog向导：QWizard安装软件时的下一步按钮     （相关控件）QWizardPage
+                                  QAbstractPintDialog        QPintDialog打印页面
+                                  QPintPreviewDialog打印预览效果图   （相关控件）QPintPreviewWidget
+                                  QPageSetupDialog效果图可选择纸张，边框大小等
+                      QSplashScreen欢迎界面
+                      功能控件  QVideoWidget播放视频   相关控件 QCameraViewfinder 相机
+                               QWebEngineView   浏览器引擎，可打开网页
+
+
+
+QtGui       涵盖了多种基本图形功能的类如  字体  图形  图标  颜色 等等
+
+QtCore      涵盖了包的核心的非GUI功能   时间  文件 目录 数据类型 文本流 连接 线程进程 等等
+
+Qt          涵盖了所有的类
+——————————————————————————————————————————————————
+            Enginio	用于访问Qt云服务的类(不推荐)
+            QAxContainer	访问ActiveX控件和COM对象的类
+            Qt	其他模块的合并
+            Qt3DAnimation	在模拟中支持动画的类
+            Qt3DCore	支持近实时仿真系统的核心类
+            Qt3DExtras	预先构建的元素，与Qt3D一起使用
+            Qt3DInput	处理使用Qt3D时用户输入的类
+            Qt3DLogic	启用帧同步的类
+            Qt3DRender	启用2D和3D呈现的类
+            QtAndroidExtras	特定于Android的附加类
+            QtBluetooth	支持设备之间蓝牙连接的类
+            QtChart	支持2D图表创建的类
+            QtCore	Qt核心类
+            QtDBus	使用D-Bus协议支持IPC的类
+            QtDataVisualization	支持3D数据可视化的类
+            QtDesigner	允许使用Python扩展Qt设计器的类
+            QtGui	widget和OpenGL gui共有的核心类
+            QtHelp	用于创建和查看可搜索文档的类
+            QtLocation	用于创建映射应用程序的类
+            QtMacExtras	特定于macOS和iOS的附加类
+            QtMultimedia	多媒体内容、摄像机和收音机的类
+            QtMultimediaWidgets	提供附加的多媒体相关小部件和控件的类
+            QtNetwork	核心网络类
+            QtNetworkAuth	网络授权类
+            QtNfc	支持设备之间NFC连接的类
+            QtOpenGL	在传统窗口小部件中呈现OpenGL的类(不推荐)
+            QtPositioning	从卫星、wifi等获取定位信息的类
+            QtPrintSupport	实现打印的类
+            QtPurchasing	支持从应用商店购买应用程序的类
+            QtQml	与QML语言集成的类
+            QtQuick	使用Python代码扩展QML应用程序的类
+            QtQuickWidgets	用于在传统小部件中呈现QML场景的类
+            QtRemoteObjects	用于在进程或系统之间共享QObject的API的类
+            QtSensors	用于访问系统硬件传感器的类
+            QtSerialPort	用于访问系统的串行端口的类
+            QtSql	与SQL数据库集成的类
+            QtSvg	提供对SVG支持的类
+            QtTest	支持GUI应用程序单元测试的类
+            QtWebChannel	用于Python和HTML/JavaScript之间的点对点通信的类
+            QtWebEngine	用于将QML Web引擎对象与Python集成的类
+            QtWebEngineCore	Web引擎核心类
+            QtWebEngineWidgets	基于Chromium的web浏览器
+            QtWebKit	基于WebKit2的web浏览器(已弃用)
+            QtWebKitWidgets	基于WebKit1的web浏览器(已弃用)
+            QtWebSockets	实现WebSocket协议的类
+            QtWidgets	用于创建经典桌面样式ui的类
+            QtWinExtras	特定于Windows的附加类
+            QtX11Extras	特定于X11的其他类
+            QtXml	支持SAX和DOM到XML接口的类
+            QtXmlPatterns	支持其他XML技术的类
+            sip	绑定开发人员和用户的实用程序
+            uic	用于处理Qt设计器创建的文件的类
+————————————————————————————————————————————————————————————————
+
+QObject  所有类的基类
