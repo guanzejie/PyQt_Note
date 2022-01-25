@@ -1,0 +1,16 @@
+shotgun
+
+ 设置                site preferences
+ 添加人员             people     -   addperson
+ 设置权限人员          permissions-people
+ 设置自己的信息        account settings     点击齿轮可以配置 语言  密码  用户权限等
+
+ shotgun    是一个数据库
+ entity     代表了各种不同的表单
+
+ 配置跟踪设置
+ 配置导航
+
+ 任务模板  每个模板里面有多个任务，如场景任务    和角色任务
+
+ 页面      可以保存一个页面，点击星型可以保持当前页面

@@ -40,10 +40,6 @@ action.setIcon(QIcon("./logo.png"))
 le.addAction(action, QLineEdit.TrailingPosition)                            #TrailingPosition把logo放到右边
 
 
-#自动补全
-completer = QCompleter(["guan",'guanze',"zejie","jieshao","wangzha"],le)  #设置关键字
-le.setCompleter(completer) #补全
-
 
 
 
