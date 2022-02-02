@@ -12,7 +12,7 @@ window=QWidget()
 window.setWindowTitle("hahahahah")
 window.resize(500,500)
 
-class Btn(QAbstractButton):
+class Btn(QAbstractButton):   #这是一个抽象类，不可以直接实例化，只能重写
     def paintEvent(self, env):
         #print("aa")
         painter=QPainter(self)              #创建一个画图的人，self是画纸

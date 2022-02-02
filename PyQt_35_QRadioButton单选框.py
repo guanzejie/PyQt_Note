@@ -11,6 +11,7 @@ window.resize(500,500)
 but=QRadioButton(window)
 but.setText("男")
 but.move(0,30)
+but.setChecked(True) #默认选中
 
 but1=QRadioButton(window)
 but1.setText("女")

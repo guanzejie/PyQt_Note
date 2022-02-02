@@ -22,7 +22,7 @@ but.setIcon(icon)      #这是QAbstractButton的api,设置图标
 size1=QSize(50,50)
 but.setIconSize(size1) #这是QAbstractButton的api,设置图标大小
 
-but.setShortcut("alt+a") #是QAbstractButton的api，也可以通过这种方法设置快捷键
+#but.setShortcut("alt+a") #是QAbstractButton的api，也可以通过这种方法设置快捷键
 
 
 

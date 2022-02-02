@@ -26,6 +26,10 @@ print(but.autoRepeat())           #查看是否点击重复
 print(but.autoRepeatDelay())      #查看延迟
 print(but.autoRepeatInterval())   #查看间隔
 
+but.setStyleSheet("QPushButton:pressed {background-color:red;}")
+
+but.setDown(True) #设置为按下状态
+
 #but.setDown(True)        #设置为按下状态
 but.setCheckable(True)    #设置按钮可以被选中
 print(but.isCheckable())  #查看按钮是否可以被选中

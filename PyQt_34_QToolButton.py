@@ -32,7 +32,7 @@ but.setArrowType(Qt.UpArrow)      #默认的箭头图标
 
 but.setAutoRaise(True)       #扁平化处理
 
-
+#菜单设置
 menu=QMenu(but)
 sub_m=QMenu(menu)
 sub_m.setTitle("保存")

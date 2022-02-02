@@ -3,7 +3,7 @@ import sys
 app=QApplication(sys.argv)
 
 class AValidator(QValidator):  #Validator的意思是验证器
-    def validate(self, input_str, pos_int):    #（self，输入内容，光标位置）
+    def validate(self, input_str, pos_int):    #（self，输入内容，光标所在那个字符串的位置）
         print(input_str, pos_int)
 
         try:

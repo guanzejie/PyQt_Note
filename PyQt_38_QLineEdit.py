@@ -35,9 +35,11 @@ bt.pressed.connect(clear_text)
 
 
 action=QAction(le)
+action.triggered.connect(lambda :print("点击了"))
 action.setIcon(QIcon("./logo.png"))
 #le.addAction(action, QLineEdit.LeadingPosition) #把logo放到输入框的左边        TrailingPosition把logo放到右边
 le.addAction(action, QLineEdit.TrailingPosition)                            #TrailingPosition把logo放到右边
+
 
 
 #自动补全
