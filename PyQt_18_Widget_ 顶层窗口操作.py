@@ -45,6 +45,8 @@ print(window.isFullScreen())
 
 #窗口标志
 
+#window.setWindowFlags(Qt.WindowStaysOnBottomHint)
+window.setWindowFlags(Qt.FramelessWindowHint)  #设置为无顶层栏
 
 
 

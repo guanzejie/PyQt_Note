@@ -32,10 +32,10 @@ class Window(QMainWindow): #组合控件
 
         #le1.clearFocus()   #不设置这个控件为焦点
 
-    #def mousePressEvent(self, Eve):
+    def mousePressEvent(self, Eve):
 
-        #print(self.focusWidget())     #打印现在时那个控件获取了焦点
-        #self.focusNextChild()         #鼠标点击之后会切换到下一个子控件
+        print(self.focusWidget())     #打印现在时那个控件获取了焦点
+        self.focusNextChild()         #鼠标点击之后会切换到下一个子控件
         #self.focusPreviousChild()     #鼠标点击之后会切换到下一个子控件
         #self.focusNextPrevChild(True)  #鼠标点击之后会切换到下一个子控件
 

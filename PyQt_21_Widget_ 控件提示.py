@@ -8,7 +8,7 @@ class Window(QMainWindow): #组合控件
         super().__init__()
 
         self.setWindowTitle("提示")
-        self.setWindowFlags(Qt.WindowContextHelpButtonHint)
+        self.setWindowFlags(Qt.WindowContextHelpButtonHint)    #顶层窗口会出现一个？按钮
         self.statusBar()           #懒加载状态栏
         self.resize(500,500)
 

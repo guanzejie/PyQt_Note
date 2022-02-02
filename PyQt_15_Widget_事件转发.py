@@ -18,7 +18,7 @@ class Lable(QLabel):
     #def mousePressEvent(self, QMouseEvent):
     def mousePressEvent(self, env):
         print("内层鼠标按下")
-        #env.accept()               #告诉系统这个事件已经处理了，不用再转发了
+        env.accept()               #告诉系统这个事件已经处理了，不用再转发了
         #print(env.isAccepted())    #查询事件是否被处理了
         #env.ignore()               #忽略事件
 
@@ -26,7 +26,7 @@ class Lable(QLabel):
         if(env.key()==Qt.Key_Tab):  #捕获tab键
             print("Tab")
 
-        #监听修饰键ctr需要用env.modifiers()==Qt.ControlModifier
+        #监听修饰键ctrl需要用env.modifiers()==Qt.ControlModifier
         #监听修饰键shift需要用env.modifiers()=Qt.ShiftModifier
         #监听修饰键alt需要用env.modifiers()=Qt.AltModifier
         #if (env.modifiers() == Qt.ControlModifier  and env.key() == Qt.Key_S):
