@@ -20,6 +20,7 @@ bt.setText("按钮")
 def chufa():
     #文本编辑
     #le.backspace()   #删除
+    le.backspace(True,2)   #选中两个字符并删除
     #le.del_()        #删除
     #le.clear()       #清空
     #le.copy()
