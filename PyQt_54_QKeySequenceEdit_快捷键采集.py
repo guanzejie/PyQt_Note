@@ -24,7 +24,7 @@ but.pressed.connect(lambda :print(le.keySequence().toString()))
 
 #发射的信号
 le.editingFinished.connect(lambda :print("结束编辑"))
-le.keySequenceChanged.connect(lambda :print("快捷键变了"))
+le.keySequenceChanged.connect(lambda key :print("快捷键变了",key.toString()))
 
 
 
