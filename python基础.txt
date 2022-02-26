@@ -1,0 +1,640 @@
+python注释     #    或多个#     或""" """
+_______________________________________________________________
+特殊注释     #!/usr/bin/python2.7               指定用哪个python解析器
+            # -*- coding: utf-8 -*-            指定编码格式为utf-8
+______________________________________________________________
+a,b = 1,2          #a=1   b=2
+print(id(a))
+________________________________________________________________
+type(a)            #数据类型查看
+___________________________________________________________________
+**  例如5**3   5的3次方   幂运算，          //   整除运算
+_____________________________________________________________________
+%  可以计算取得列             //可以计算取得行
+__________________________________________________________________
+not,  and,  or,  is,  in,  not in
+非0就是真，非空是真
+________________________________________
+input_0=raw_input()      #输入字符串     *python3取消了
+input_1=input()          #把输入的内容当做代码来处理
+
+——————————————————————————————————————————python2
+print("aaaaa%d,%s"%(dd,ss))
+
+print("aaaaa{0}},{1}}".format(dd,ss))
+
+f=open("test.txt","w")
+print >>f,"aaaaaaaaaa"   #输出到文件
+
+print 1,                 #输出不换行
+print 2,
+print 3,
+
+print "-".join(["a","b","c"])#输出分隔符
+——————————————————————————————————————————————————python3
+f=open("test.txt","w")
+print("aaaaaaaa",file=f)    #python3打印输出到文件
+
+print("aa",end="")         #输出不换行
+print("bb",end="")
+print("cc",end="")         #end默认是end="\n"
+
+print("a","b","c",sep="_")   ##输出分隔符a_b_c
+
+print("数字1:  %(yi)d,数字2:  %(er)d" % {"yi":10,"er":20})
+
+print("%5d"%10)
+print("%05d"%10)
+
+print("%.5f"%10.123456789)
+
+i/d  o  x  e  E  f  F  g  G  s  r  c %%
+——————————————————————————————————————————————————————循环
+for：
+else：
+
+while
+else
+————————————————————————————————————————————————————————进制
+num=0b123    #二进制    零b
+num=0o123    #八进制    零o
+num=123      #十进制
+num=0x123    #十六进制  零x
+168.2==1.682e2
+————————————————————————————————————————————————————————数学函数
+abs(a)
+max(a,b)
+min(a,b)
+round(3.14159,1)    #四舍五入
+pow(2,4)            #2的4次方
+
+import math
+math.ceil(3.14)     #上取整    #4
+math.floor(3.14)    #下取整    #3
+math.sqrt(16)       #开方     #4
+math.log(10000,10)  #10的多少次方等于10000   #4
+————————————————————————————————————————————————————————————随机
+import random
+random.random()            #0-1的随机小数，不等于1
+random.choice([1,2,3,])    #随机列表的内容
+random.uniform(2,5)        #随机两个数之间的小数
+random.randomint(1,50)     #随机两个数之间的整数
+random.randrange(1,50,2)     #随机两个数之间的整数,步长为2
+
+————————————————————————————————————————————————————三角函数
+import math
+math.sin(a)
+math.cos(a)
+math.tan(a)
+math.asin(a)
+math.acos(a)
+math.atan(a)
+math.degrees(a)    #角度
+math.radians(a)    #弧度
+math.pi
+
+__________________________________________________________字符串
+
+name="aa"\      #末尾的\是续行符    name=aabbcc
+"bb"\
+"cc"
+
+name="aa\\nbb"  #中间的\是转义字符
+
+name=r"aa\nbb"  #r""是代表原始字符串的意思，不需要转义
+
+help() 可以查看函数内的""" """ 里的内容
+
+"aa"+"bb"
+"aa"*3
+
+len("guanze杰")==7
+————————————————————————————————————————————————————————————————列表
+ra=range(5)
+ra1=range(2,7)
+
+[i**2 for i in ra]
+
+ra.index(5)     #列表中5是第几个index
+
+ra.count(2)     #列表中有几个2
+
+cmp(ra,ra1)     #比较后返回3个值 -1  0   1
+
+ra + ra1        #相当于ra.append(ra1)
+
+ss=sorted(ra)      #排序,不更改原始列表
+
+ra.sort()          #排序,更改原始列表
+
+random.shuffle(ra) #乱,更改原始列表
+
+ra.reverse         #倒序,更改原始列表
+
+re[::-1]           #倒序,不更改原始列表
+
+#枚举
+aa=["aa","bb","cc"]
+list(enumerate(aa))      #[(0,"aa"),(1,"bb"),(2,"cc")]
+
+#判断是否是可迭代的对象
+import collections
+print(isinstance(aa,collections.Iterable))     #判断是否是可迭代的对象
+
+
+#迭代器，能用next()函数进行遍历，只能往前      #是否可以迭代和迭代器是两个概念
+import collections
+print(isinstance(aa,collections.Iterator))     #判断是不是迭代器
+
+it=iter(aa)      #构造迭代器
+
+print(next(it))
+
+__________________________________________________________________元组
+
+tuple1=(1,)
+
+tuple2=(1,1,2,3)
+
+tuple3=1,2,3
+
+tuple4=tuple([1,2,3])
+
+#元祖不支持增删改，可以查
+
+a,b,c=tuple3    #元祖拆包 a=1,b=2,c=3
+
+——————————————————————————————————————————————————————————————字典
+name={"key":"value"}     #字典定义，字典的key是不可以重复的，字典的key是不可变的值(修改了内存空间的值)
+
+print(name["key"])
+
+d=dict.fromkeys("abcd")   #定义了一个4个key的字典，值都是none
+
+di=dict.fromkeys("abcd"，111)   #定义了一个4个key的字典，值都是111
+
+name["aa"]=123           #增加元素
+
+name["bb"]=456           #增加元素
+
+name["cc"]=789           #增加元素
+
+#del name["aa"]          #删除元素
+
+#name.pop('bb')          #删除元素
+
+#name.popitem()          #排序后删除第一个
+
+#name.clear()            #清空字典
+
+name["cc"]=111           #修改字典值
+
+print(name["cc"])        #查询字典
+
+print(name.get("cc"))    #查询字典，如果key不存在会取默认值，name.get("cc",66666)    设置默认值为66666
+
+print(name.setdefault("cc"))      #查询字典,如果key不存在会取默认值None,也可以设置默认值("cc",66666)
+
+print(name.keys)        #查询所有的键
+
+print(name.values)        #查询所有的值
+
+print(name.items)        #查询所有的键值对
+
+print(len(name))
+
+print("cc" in name)      #使用in只能查询key
+
+——————————————————————————————————————————————————————————————————————————————————————————集合
+#不可变集合
+aa=[23,434,213,23]
+
+s={1,2,3,4}
+
+s1=set(aa)
+
+s2={i**2 for i in range(1,10)}
+
+
+#可变集合
+fs=frozenset("abc")
+
+fs=frozenset(aa)
+
+s2=frozenset(i**2 for i in range(1,10))
+
+#集合内的值是不可变的，值不可重复
+
+s.add(5)       #增加值
+
+s.remove(1)    #删除值，没有这个值就报错
+s.discard(2)   #删除值，没有这个值不会报错
+s.pop()        #随机删除，返回删除的值
+s.clear()      #清空整个集合
+del s          #删除集合
+
+jiao=s1.intersection(s2)         #交集
+jiao=s1.intersection_update(s2)  #交集,会更改s1对象
+
+bing=s1.union(s2)                #并集
+bing=s1|s2
+bing=s1.union_update(s2)         #并集,会更改s1对象
+
+cha =s1.difference(s2)           #差集
+cha =s1-s2
+cha =s1.difference_update(s2)    #差集,会更改s1对象
+
+
+
+print(s1.isdisjoint(s2))         #是否相交(有没有同样的元素)
+print(s1.issuperset(s2))         #是s1中是否完全包含了s2
+print(s1.issubset(s2))           #是s2中是否完全包含了s1
+
+————————————————————————————————————————————————————————————————————————时间的处理
+_________________________
+import time
+
+years=time.time()/(24*60*60*360)+1970        #获取时间戳
+day_t=time.localtime()                       #获取时间元组
+t =time.ctime(time.time())                   #格式化时间戳
+t1=time.asctime(day_t)                       #格式化时间元组
+t2=time.strftime("%Y-%m-%d %H:%M:S%", day_t) #格式化时间元组
+t3=time.strptime(t2,"%Y-%m-%d %H:%M:S%")     #格式化时间元组转换为原始元组
+t4=time.mktime(t3)                           #把时间元组转换为时间戳
+
+#获取cpu计算时间
+t5=time.clock()    #当前时间点
+for i in range(10000):
+    print(i)
+t6=time.clock()    #当前时间点
+print(t6-t5)
+
+time.sleep(1)      #程序休眠1秒
+
+
+_____________________________________
+import calendar
+
+print(calendar.mouth(2022,2))      #打印月份的日历
+
+
+
+—————————————————————————————————————
+import datetime
+
+print(datetime.datetime.now())       #当前时间
+print(datetime.datetime.today())     #当前时间
+
+print(datetime.datetime.now().year)
+print(datetime.datetime.now().mouth)
+print(datetime.datetime.now().day)
+print(datetime.datetime.now().hour)
+print(datetime.datetime.now().minute)
+print(datetime.datetime.now().second)
+
+t=datetime.datetime.today()
+
+d7=t+datetime.timedelta(days=7)   #计算7天后的日子
+print(d7)
+
+
+
+--------------------------------------------------------------------------------------------------------文件
+f=open("shotgun.txt","r+")    #"r" ,"w" , "a",  "r+" , "w+" , "a+" ，"rb" , "wb"
+
+f.seek(2,0)                    #从文件开头位置移动文件指针到第2字节位置           #0是开头，1是当前位置   ，2是末尾
+
+print(f.tell())              #打印文件指针位置
+
+aa=f.read()               #读文件所有内容
+bb=f.read(3)             #读取当前指针到第3个字符的单个字符，并移动指针到这个位置
+cc=f.readline()          #读取单行，并移动指针到这个位置
+dd=f.readlines()        #读文件所有内容,按照换行符分割没一行，比存入一个列表
+if (f.readlines()):
+    for i in f:
+          print(i,end="")     #f是一个迭代器
+
+if (f.writable):   #判断f是否可写入内容
+    f.write("aaaaaaa")    #把字符串写入文件
+
+f.flush()   #刷新缓冲区
+
+f.close()  #关闭文件，释放内存
+
+
+——————————————————————————————————————————————————————————————————————————————————————————函数
+def fun(m1,m2):
+    print(m1+m2)
+
+fun(m2=2,m1=11)    #使用名字传参可以不按照顺序来（关键字传参 ）
+
+
+def fun(*args):     #可接收一个元组
+    print(args)
+fun(1,2,3,4,5,6)
+
+
+def fun(**kwargs):     #可接收一个字典
+    print(args)
+fun(m2=2,m1=11)        #必须以关键字传参
+
+#拆包——————————————————
+def test(*args):
+    print(*args)
+
+def cb(a,b)            #cb(2,11)
+    print(a,b)
+def test(**kwargs):
+    cb(**kwargs)       #把整个包给到cd函数cb(m2=2,m1=11)
+test(m2=2,m1=11)
+
+#缺省参数（默认值）
+
+#偏函数——————————————————
+def test(a,b,c):
+   print(a+b+c)
+
+def test1(a,b,c=1)   #创建一个新的函数赋予默认值，用于简化后续调用
+   test(a,b,c)
+
+test(1,2)
+
+
+import functools            #偏函数模块
+nwefun=functools(test,c=1)  #设置test函数里变量c的默认值
+nwefun(1,2)
+
+#高阶函数—————————————————
+       #当一个函数A的参数，接收的又是另一个函数时，则把这个函数A称为高阶函数
+
+def daying(t,num)      #接收的又是另一个函数
+    print(t,num)
+
+def test(a,b):
+    return(a+b)
+
+daying("等于",test)     #高阶函数调用
+
+#返回函数—————————————————
+
+def a():
+    def b():
+        pass
+    return b    #返回函数
+
+#匿名函数————————————————————
+
+aa=lambda(a,b :a+b)(1,2)
+
+
+#闭包———————————————————————
+    #内层函数引用了外层函数的变量，外层函数返回了内层函数
+
+def outfun():
+    aa=1
+    def infun():
+        nonlocal aa         #非局部变量(全局的)
+        aa=10
+        print(aa+1)
+    return infun
+
+fun=outfun()
+fun()
+
+#装饰器—————————————————————
+def out(f):
+    def int(hh):
+        print("登录了"）
+        f(hh)
+    return int
+
+@out        #语法糖
+def ha(aa):
+    print("hahaha",aa)
+
+ha(10)
+
+__________
+def oout(hh):
+    def out(f):           #闭包内的闭包
+        def int(aa):      #闭包内闭包内的闭包
+            print(hh*10)
+            f(aa)
+
+        return int
+    return out
+
+@oout("_")               #带参数的语法糖
+def ha(aa):
+    print("hahaha",aa)
+
+ha(10)
+
+_____________________________________________________________________________________生产器
+
+gen=(i**2 for i in rang(10))     #生成器生成式
+
+print(next(gen))                 #生成器元素访问
+
+print(gen.__next__())            #生成器元素访问
+
+
+def gen1():
+    aa=yield 1   #aa被send函数赋予了"aaa",    aa="aaa"
+    print(111)
+    print(aa)
+
+    bb=yield 2   #send调用了这句
+    print(222)
+
+    cc=yield 3
+    print(333)
+
+g=gen1()
+print(next(g))        #打印了一个 1，只输出了yield后面的1，然后进入堵塞状态
+print(g.send("aaa"))  #和next语句一样执行下一个迭代，然后把aaa付给上一个迭代的放回值
+
+g.close()             #关闭生成器，把生成器直接跳到最后一个
+
+——————————————————————————————————————————————————————————————————————————————————————————————递归
+def jiecheng(n):
+    if n==1:                  #跳出递归
+        renturn 1
+    return n*jiecheng(n-1)    #调用函数自己
+print(jiecheng(8))
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————作用域
+python没有块级作用域
+
+if 1：
+  a=10     #块级作用域 ,这个a相对于全局里的a
+print(a)
+
+nonlocal a  #使用全局的a
+
+global a    #这个a是全局的
+
+print(locals()) #查看当前作用域的所有局部变量
+print(globals())#查看当前作用域的所有全局变量
+
+
+————————————————————————————————————————————————————————————————————————————————————————————————————————————异常处理
+# 1/0                      ZeroDivisionError    除0异常
+# ————————————————————————————————————————————————————
+# print(aa)               NameError            名字异常
+# ————————————————————————————————————————————————————
+# 1+"a"                   TypeError            类型异常
+# ————————————————————————————————————————————————————
+# a=[1,2]
+# a[10]                   IndexError            索引异常
+# ————————————————————————————————————————————————————
+# dic={'bb':10,'ee':1}
+# dic[aa]                KeyError             字典键异常
+# ————————————————————————————————————————————————————
+# int("a")                  ValueError           值异常
+# ————————————————————————————————————————————————————
+# a=10
+# a.append()                AttributeError     属性异常
+# ————————————————————————————————————————————————————
+# it=iter([0,1])
+# next(it)
+# next(it)
+# next(it)                   StopIteration     迭代异常
+# ————————————————————————————————————————————————————
+
+# 异常继承数   BaseException   ->   SystemExit            由系统函数所触发的异常类
+#                                 KeyboardInterrupt     当用户使用键盘点击中断时所产生的异常类
+#                                 GeneratorExit         调用生成器是产生的异常类
+#                                 Exception             内置的非系统的异常派生类（手动抛出异常）
+
+try:                             # 尝试代码，如果出现异常跳过代码行进入except
+    1 / 1
+    print(aa)
+
+except ZeroDivisionError:        # 要捕捉什么类型的异常，如果没出现异常将跳过此语句
+    print("除0错误")
+
+except NameError as ne:          # except语句可以出现多条
+    print("名字异常",ne)          # 可以把异常打印出来
+
+except (ValueError,IndexError):  # 同时处理多个异常
+    print("多个异常")
+
+except Exception:                # 处理不知道是什么错误的错误
+    print("不知道是什么错误")
+
+else:                            # 如果没出现异常将执行此语句
+    print("没有异常")
+
+finally:                         # 不管有没有异常都会执行
+    print("不管有没有异常都会执行")
+
+
+
+
+————————————————————————————————————————————————————————————————————————————————————
+
+# with语句  语法   with 上下文表达式 [as target]:     #as是可选的，意义是将上下文对象赋予给target
+#                      with-body                  执行完语句体会自动调用__exit__方法
+
+with open("shotgun.txt", "r+") as f:
+    pass
+    #print(f.read())
+
+————————————————————————————————————————————————————————————————————————————
+# 上下文管理器
+class Test:                                         # 自定义上下文管理器
+    def __enter__(self):                            # 在执行with语句前会执行的代码
+        print("enter")
+
+        return self                                 # 返回值是用于as的将上下文对象赋予as的对象
+
+    def __exit__(self, exc_type, exc_val, exc_tb):  # 执行完with-body后自动调用退出，exc_type异常的类别
+                                                                               # exc_val 错误提示信息
+        print(self, exc_type, exc_val, exc_tb)                                 # exc_tb  追踪的信息
+        import traceback
+        print(traceback.extract_tb(exc_tb))         # 打印出追踪信息，错误在哪个文件那一行
+
+        # return True     #表示接收到异常后不做处理
+        # return False    #表示接收到异常后会往外抛
+
+with Test() as x:         # 在执行这语句之前会先调用__enter__(self)，然后调用Test() as x，再调用__exit__(self)
+    print("body", x)
+
+
+
+
+————————————————————————————————————————————
+#使用生成器来制作上下文管理器
+import contextlib
+@contextlib.contextmanager
+ def test():
+     print(1)         # yield的前面是__enter__部分
+     yield "aaaaa"    # 返回值是用于as的将上下文对象赋予te的对象
+     print(3)         # yield的后面是__exit__部分
+
+with test() as te:
+     print(2,te)
+
+——————————————————————————————————————————
+
+import contextlib
+@contextlib.contextmanager
+def zero():
+    try:
+        yield
+
+    except ZeroDivisionError as z:
+        print("Error",z)
+
+with zero():
+    print(1/0)
+
+————————————————————————————————————————————————
+#手动抛出异常
+def age(age):
+    if age<=0 or age>200:
+        raise ValueError("年龄错误")      #手动抛出异常
+    else:
+        print("张三的年龄是：%d"%age)
+
+try:
+    age(-1)
+except ValueError as v:
+    print(v)
+————————————————————————————————————————————————————————
+
+#定义异常类
+class lessZero(Exception):
+
+    def __init__(self,msg):
+        self.msg=msg
+    def __str__(self):
+        return "他妈的小于零了"
+
+def age(age):
+    if age<=0 or age>200:
+        raise lessZero("负数错误")      #手动抛出异常
+    else:
+        print("张三的年龄是：%d"%age)
+
+try:
+    age(-1)
+except lessZero as l:
+    print(l)
+
+
+
+——————————————————————————————————————————————————————————————————————————————————常用模块
+导入模块
+import os
+print(os.path)         #查看当前路径
+
+import os,sys
+
+from os import path
+
+print(sys.path)        #查看环境变量目录列表
+
+
+
