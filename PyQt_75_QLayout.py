@@ -1,8 +1,8 @@
-
 from PyQt5.Qt import *
 import sys
 
-app=QApplication(sys.argv)
+app = QApplication(sys.argv)
+
 
 class Window(QWidget):
 
@@ -13,10 +13,9 @@ class Window(QWidget):
         self.setupUi()
 
     def setupUi(self):
-
         pass
 
 
-window=Window()
+window = Window()
 window.show()
 sys.exit(app.exec_())
