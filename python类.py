@@ -129,7 +129,7 @@ class Fu:
         print(self.__Z)
         print(Fu.__Z)
 
-    def __run(self):                      # 定义私有方法
+    def __run(self):  # 定义私有方法
         print("私有方法")
 
 
@@ -147,7 +147,7 @@ a = Zi()
 a.test()
 a.test1()
 print(Fu._Fu__Z, "bbbbbbbb")  # 可以使用 " _父类名字__属性" 的方式访问父类的私有属性
-print(a._Fu__run())           # 访问私有方法
+print(a._Fu__run())  # 访问私有方法
 
 
 # _______________________________________________________________________________只读 1
@@ -216,33 +216,34 @@ class P3:
 
 
 p3 = P3()
-print(P3.__dict__)    # 类属性
-print(P3.__bases__)   # 所有的父类
-print(P3.__doc__)     # 文档描述
-print(P3.__name__)    # 查看类名
+print(P3.__dict__)  # 类属性
+print(P3.__bases__)  # 所有的父类
+print(P3.__doc__)  # 文档描述
+print(P3.__name__)  # 查看类名
 print(P3.__module__)  # 类定义的所在模块
-print(p3.__class__)   # 实例对应的类
+print(p3.__class__)  # 实例对应的类
+
 
 # ——————————————————————————————————————————————————————————————————————————内置方法
 
 
 class P4:
 
-    def __init__(self, name, age):   # 自动初始化
+    def __init__(self, name, age):  # 自动初始化
         self.name = name
         self.age = age
 
-    def __str__(self):        # 格式化信息字符串，print(p4)直接打印实例的时候会调用这一个方法，这个方法放回的必须是字符串
+    def __str__(self):  # 格式化信息字符串，print(p4)直接打印实例的时候会调用这一个方法，这个方法放回的必须是字符串
         return (self.name)
 
-    def __repr__(self):      # 重写rapr函数
+    def __repr__(self):  # 重写rapr函数
         return "__repr__"
 
 
 p4 = P4("guan", 18)
 
 print(p4)
-print(repr(p4))               # 放回实例的内存地址和父类
+print(repr(p4))  # 放回实例的内存地址和父类
 
 
 # __________________________________字典操作
@@ -250,31 +251,30 @@ print(repr(p4))               # 放回实例的内存地址和父类
 
 class P5:
     def __init__(self):
-        self.cache={}
+        self.cache = {}
 
-    def __call__(self, *args, **kwargs):       # 如果需要把实例对象当做函数来调用可以使用这个方法
+    def __call__(self, *args, **kwargs):  # 如果需要把实例对象当做函数来调用可以使用这个方法
         print("__call__")
 
-    def __setitem__(self, key, value):         # 可以实现以字典的方式赋值   p5["aa"] = 10
+    def __setitem__(self, key, value):  # 可以实现以字典的方式赋值   p5["aa"] = 10
         # print("值是",key,value)
-        self.cache[key]=value
+        self.cache[key] = value
 
-    def __getitem__(self, item):               # 可以实现以字典的方式获取值   print(p5["aa"])
+    def __getitem__(self, item):  # 可以实现以字典的方式获取值   print(p5["aa"])
         # print("值是",item)
         return self.cache[item]
 
-    def __delitem__(self, key):                # 可以实现以字典的方式删除元素
+    def __delitem__(self, key):  # 可以实现以字典的方式删除元素
         # print("值是",key)
         del self.cache[key]
 
 
-
 p5 = P5()
 
-p5()                 # __call__    用调用函数的方式来调用实例   p5()  实例名字加上个（）号
-p5["aa"] = 10        # __setitem__
-print(p5["aa"])      # __getitem__
-del p5["aa"]         # __delitem__
+p5()  # __call__    用调用函数的方式来调用实例   p5()  实例名字加上个（）号
+p5["aa"] = 10  # __setitem__
+print(p5["aa"])  # __getitem__
+del p5["aa"]  # __delitem__
 
 
 # __________________________________切片操作
@@ -282,7 +282,7 @@ del p5["aa"]         # __delitem__
 
 class P6:
     def __init__(self):
-        self.items= [1,2,3,4,5]
+        self.items = [1, 2, 3, 4, 5]
 
     def __setitem__(self, key, value):
         print(key.start)
@@ -310,27 +310,27 @@ class P7:
         self.age = age
         self.height = height
 
-    def __eq__(self, other):        #比较操作的相等规则
+    def __eq__(self, other):  # 比较操作的相等规则
         print(other)
         return self.age == other
 
-    def __ne__(self, other):        #比较操作的不相等规则
+    def __ne__(self, other):  # 比较操作的不相等规则
         print(other)
         return self.age == other
 
-    def __gt__(self, other):        #比较操作的大于规则
+    def __gt__(self, other):  # 比较操作的大于规则
         print(other)
         return self.age > other
 
-    def __ge__(self, other):        #比较操作的大于等于规则
+    def __ge__(self, other):  # 比较操作的大于等于规则
         print(other)
         return self.age >= other
 
-    def __lt__(self, other):       #比较操作的小于规则
+    def __lt__(self, other):  # 比较操作的小于规则
         print(other)
         return self.age < other
 
-    def __le__(self, other):        #比较操作的小于等于规则
+    def __le__(self, other):  # 比较操作的小于等于规则
         print(other)
         return self.age <= other
 
@@ -349,7 +349,7 @@ print(aa != bb)
 
 class P8:
     def __init__(self):
-        self.result=1
+        self.result = 1
 
     # def __getitem__(self, item):
     #     self.result += 1
@@ -358,12 +358,12 @@ class P8:
     #
     #     return self.result
 
-    def __iter__(self):               #实现迭代功能
+    def __iter__(self):  # 实现迭代功能
         self.result = 1
-        #return iter([1, 2, 3])
+        # return iter([1, 2, 3])
         return self
 
-    def __next__(self):               #实现next功能
+    def __next__(self):  # 实现next功能
         self.result += 1
         if self.result >= 6:
             raise StopIteration("stop")
@@ -379,6 +379,7 @@ print(next(pp8))
 print(next(pp8))
 print(next(pp8))
 print(next(pp8))
+
 
 # for i in p8:
 #     print(i)
@@ -408,7 +409,7 @@ class P9:
     def age(self):
         del self.__age
 
-    #age = property(get_age, set_age, del_age)     # 以调用属性的方式调用方法，调用的时候不需要加括号
+    # age = property(get_age, set_age, del_age)     # 以调用属性的方式调用方法，调用的时候不需要加括号
 
 
 # aa = P9()
@@ -419,3 +420,46 @@ aa.age = 100
 
 print(aa.age)
 
+
+# _____________________________________
+
+class Age:
+    def __get__(self, instance, owner):
+        print("get")
+
+    def __set__(self, instance, value):
+        print("set")
+
+    def __delete__(self, instance):
+        print("del")
+
+
+class P10:
+    age = Age()
+
+
+p10 = P10()
+p10.age = 1000
+print(p10.age)
+
+
+# ______________________________________ 类的装饰器
+
+
+class check:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):  # 把类当做函数调用
+        print("登录")
+        self.func()
+
+
+@check
+def fatupuan():
+    print("发图片")
+
+
+fatupuan()
+# send = check(fatupuan)
+# send()                     #只要是这个形式就会调用__call__方法
