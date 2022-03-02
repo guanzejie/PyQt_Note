@@ -1,0 +1,75 @@
+node=hou.node("/obj")             #层级的定义，相当于node等于obj层级
+box=geo.hou.node('/obj/geo1/box1')
+
+create=node.createNode("geo")     #在obj层级下创建一个geo节点
+create=node.createNode("geo"，"my_geo")     #节点命名
+
+file=create.createNode("file")          #在geo节点里面创建一个file节点
+
+file.destroy()                    #删除file节点
+
+box=create.node("box")            #创建一个box节点
+
+sel_node=hou.selectedNodes()      #选择所有的节点
+
+null=sel_node.createOutputNode("null") #创建一个下游节点并连接，()里必须填入type name
+
+null.setRenderFlag(1)             #设置为当前渲染节点
+null.setDisplayFlag(1)            #设置为当前显示节点
+
+null.setColor(hou.Color(1,0,0))   #设置节点颜色为红色
+
+print(box.type().name())          #获取type name
+
+input=hou.ui.readInput("请输入"，buttons=["ok","close"])[1]     #弹出输入框
+
+null.setName=input                #设置节点名字
+
+print(null.position())            #获取节点位置
+
+null.setPosition([10,20])         #设置节点位置
+
+#————————————————————————————————————————————————————————————————————————————————————
+node=hou.node('/obj/')
+
+c=node.createNode("geo")
+
+box=c.createNode("box")
+
+size=box.parm("sizex")       #获取数值，参数的获取，把鼠标放到参数上停留一段时间会弹出一个弹窗里面的parameters里的内容就是参数
+size.set(2)                  #设置数值
+
+type=box.parm("type")        #设置参数里的下拉列表
+type.set(0)                  #设置为下拉列表里的第一个值
+type.set("mesh")
+
+print(box.path())            #查看节点路径
+print(box.name())            #查看节点名字
+print(box.type().name())     #获取type name
+
+#——————————————————————————————————————————————————————————————————————————————————————
+desktop=hou.ui.curDesktop()  #定义窗口变量
+
+pos=(200,200)                #设置窗口位置
+size=(500,500)               #设置窗口尺寸
+
+float=desktop.createFloatingPanel(hou.paneTabType.sceneViewer,pos,size)   #定义为浮动窗口，hou.paneTabType. 使用这个可以获取窗口类型
+
+print(node.allSubChildren()) #获取当前节点的所有子节点
+
+print(box.parent())          #获取父节点的名字
+
+pan=hou.ui.paneTabOfType(hou.paneTabType.NetworkEditor)     #获取当前的节点面板
+
+pos=pan.selectPosition()                                     #节点面板里选择的位置
+
+inp=box.inouts()            #获取所有的输入节点
+
+aa=box.geometry()           #获取模型
+
+aa.pointGroups()            #获取点上的组信息
+
+box.setSelected(0)          #断开选择节点的其他连接
+
+null.setInput(0,box)        #把null节点的输入端连接到box的输出端上
+
